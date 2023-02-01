@@ -321,10 +321,12 @@ body {
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    left: 0;
-    top: 0;
+    z-index: 2;
+    /* Keep it on top of all items */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Place modal always in center */
     width: 100%;
     /* Full width */
     height: 100%;
