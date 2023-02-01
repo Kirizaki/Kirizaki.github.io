@@ -14,43 +14,22 @@
 </head>
 
 <body>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <p id="modalText"></p>
-        </div>
-    </div>
-
     <div class="brightness">
-        <img id="schroom1" onclick='openModal(this)' src="img/schroom1.gif" style="position:absolute;top: 2000px;left: 1168px;z-index:1; height: auto; width: auto;">
+        <img id="schroom1" onclick='showDetails(this)' src="img/schroom1.gif" style="position:absolute;top: 2000px;left: 1168px;z-index:1; height: auto; width: auto;">
     </div>
     <div class="brightness">
-        <img id="human" onclick='openModal(this)' src="img/human.gif" style="position:absolute;top: 2000px;left: 1168px;z-index:1; height: auto; width: auto;">
+        <img id="human" onclick='showDetails(this)' src="img/human.gif" style="position:absolute;top: 2000px;left: 1168px;z-index:1; height: auto; width: auto;">
     </div>
     <section id="WORK">
         <img src="img/lil.jpg" class="image" style="position:absolute;top: 0px;left: 0px;z-index: index 0; height: auto; width: auto;">
     </section>
 </body>
 <script>
-    var openModal = function(element) {
-        var modal = document.getElementById('myModal');
-
-        modal.style.display = "table";
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        var modalTextElement = document.getElementById('modalText');
-        modalTextElement.innerText = getTextByElementId(element.id);
-    }
-
-    var getTextByElementId = function(id) {
-        if (id == 'schroom1') {
-            return "Grzybek :3";
-        } else if (id == 'human') {
-            return "Ludzik ]:->";
+    var showDetails = function(element) {
+        if (element.id == 'schroom1') {
+            alert('Grzybek\nGrzybek to taki mały grzyb.');
+        } else if (element.id == 'human') {
+            alert('Ludzik\nLudzik to taki mały ludź.');
         }
     }
 </script>
