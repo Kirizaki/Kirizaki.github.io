@@ -79,7 +79,7 @@
 }
 
 body {
-    background-color: #fff1f1;
+    background-color: #ffffff;
     margin: 0;
 }
 
@@ -146,7 +146,7 @@ body {
 .topnav {
     width: auto;
     overflow: hidden;
-    background-color: #fff1f1;
+    background-color: #ffffff;
 }
 
 .topnav a {
@@ -160,7 +160,7 @@ body {
 }
 
 .topnav a.active {
-    background-color: #fff1f1;
+    background-color: #ffffff;
     color: black;
 }
 
