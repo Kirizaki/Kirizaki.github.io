@@ -319,7 +319,7 @@ body {
 .modal {
     display: none;
     /* Hidden by default */
-    position: fixed;
+    /* position: fixed; */
     /* Stay in place */
     z-index: 2;
     /* Keep it on top of all items */
@@ -337,6 +337,13 @@ body {
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
+    position: fixed;
+    /* display: table; */
+    /* This is important */
+    overflow-y: auto;
+    overflow-x: auto;
+    width: auto;
+    /* min-width: 300px; */
 }
 
 
@@ -350,21 +357,4 @@ body {
     border: 1px solid #888;
     width: 80%;
     /* Could be more or less, depending on screen size */
-}
-
-
-/* The Close Button */
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
