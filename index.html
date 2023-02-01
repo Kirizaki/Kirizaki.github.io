@@ -11,30 +11,48 @@
     <!-- Disable webpage cache - do not store any images in cookies -->
     <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
-    <style>
-        @font-face {
-            font-family: MatriceSemibold;
-            src: url('fonts/MatriceSemibold.otf');
-        }
-        
-        td {
-            font-size: 36px;
-            padding-top: 25px;
-            padding-bottom: 25px;
-        }
-    </style>
 </head>
 
 <body>
+    <div id="myModal" class="modal" style="z-index: index 2;">
+        <div class="modal-content" style="z-index: index 2;">
+            <p id="modalText" style="z-index: index 2;"></p>
+        </div>
+    </div>
+
     <div class="brightness">
-        <img onclick='alert("nyanthing here..")' src="img/schroom1.gif" style="position:absolute;top: 2000px;left: 1168px;z-index:3; height: auto; width: auto;">
+        <img id="schroom1" onclick='openModal(this)' src="img/schroom1.gif" style="position:absolute;top: 2000px;left: 1168px;z-index:1; height: auto; width: auto;">
     </div>
     <div class="brightness">
-        <img onclick='alert("nyanthing here..")' src="img/human.gif" style="position:absolute;top: 2000px;left: 1168px;z-index:3; height: auto; width: auto;">
+        <img id="human" onclick='openModal(this)' src="img/human.gif" style="position:absolute;top: 2000px;left: 1168px;z-index:1; height: auto; width: auto;">
     </div>
     <section id="WORK">
-        <img src="img/lil.jpg" class="image" style="position:absolute;top: 0px;left: 0px;z-index: index 1;; height: auto; width: auto;">
+        <img src="img/lil.jpg" class="image" style="position:absolute;top: 0px;left: 0px;z-index: index 0; height: auto; width: auto;">
     </section>
 </body>
+<script>
+    var openModal = function(element) {
+        var modal = document.getElementById('myModal');
+
+        modal.style.display = "block";
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        var modalTextElement = document.getElementById('modalText');
+        modalTextElement.innerText = getTextByElementId(element.id);
+    }
+
+    var getTextByElementId = function(id) {
+        if (id == 'schroom1') {
+            return "Grzybek :3";
+        } else if (id == 'human') {
+            return "Ludzik ]:->";
+        }
+    }
+</script>
 
 </html>
