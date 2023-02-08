@@ -54,7 +54,24 @@
 }
 
 * {
+    margin: 0;
+    padding: 0;
+}
+
+.yellow {
+    background-color: rgb(19, 159, 224);
+}
+
+.center-fit {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: 0;
+}
+
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .logo_wrapper {
@@ -79,6 +96,7 @@
 }
 
 body {
+    touch-action: none;
     background-color: #ffffff;
     margin: 0;
 }
@@ -112,9 +130,11 @@ body {
 }
 
 .image {
+    max-width: 99%;
+    max-height: 99%;
     opacity: 1;
     display: block;
-    width: 50%;
+    width: auto;
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
@@ -305,10 +325,80 @@ body {
 }
 
 .brightness {
-    background-color: rgb(255, 0, 0);
     display: inline-block;
 }
 
-.brightness img:hover {
-    opacity: .8;
+.brightness div:hover {
+    background-color: rgb(0, 0, 0);
+    /* opacity: .8; */
+}
+
+.box {
+    display: inline-block;
+  }
+
+.btn {
+    width: 30px;
+    height: 30px;
+    background: #FFF;
+    border: 1px solid #005bac;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #005bac;
+    padding: 15px 10px 5px;
+    position: fixed;
+    text-align: center;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+.btn:hover {
+    background: #eef;
+}
+.zoom {
+    bottom: 190px;
+}
+.zoom-out {
+    bottom: 120px;
+}
+.zoom-init {
+    bottom: 50px;
+}
+/* to be removed! */
+.organism {
+    opacity: .6;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: darkred;
+    border: 1px solid #005bac;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #005bac;
+    padding: 15px 10px 5px;
+    position: fixed;
+    text-align: center;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+.organism:hover {
+    background-color: coral;
+    cursor: pointer;
+    opacity: .2;
+}
+
+.imgbox {
+    height: 9213px;
+    width: 6042px;
 }
