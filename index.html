@@ -4,8 +4,8 @@
 <head>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
@@ -21,10 +21,12 @@
         <a id="zoomOutBtn" class="btn zoom-out"><i class="fas fa-search-minus"></i></a>
         <a id="zoomInitBtn" class="btn zoom-init"><i class="fas fa-recycle"></i></a>
     </container>
-    <div id="boxTarget" class="box target" style="position:absolute;top: 0px;left: 0px;z-index: index 0;">
-        <div id='flower' class="li brightness organism" onclick='showDetails(this)' style="position:absolute;top: 1515px; left: 943px;z-index:1; height: 80px; width: 80px;"></div>
-        <div id='human' class="li brightness organism" onclick='showDetails(this)' style="position:absolute;top: 1969px;left: 1269px;z-index:1; height: 10px; width: 10px;"></div>
-        <div id='spirala' class="imgbox" style="position:absolute;top: 0px;left: 0px;z-index: index 0;"></div>
+    <div id="boxTarget" class="box target" style="position:absolute;top: 0px;left: 0px;z-index: index 0;height: 9213px; width: 6042px">
+        <!-- <div id='flower' class="li brightness organism" onclick='showDetails(this)' style="position:absolute;top: 1515px; left: 943px;z-index:1; height: 80px; width: 80px;"></div>
+        <div id='human' class="li brightness organism" onclick='showDetails(this)' style="position:absolute;top: 1969px;left: 1269px;z-index:1; height: 10px; width: 10px;"></div> -->
+        <div id='flower' class="li brightness organism" onclick='showDetails(this)' style="position:absolute;z-index:1; height: 250px; width: 250px;"></div>
+        <div id='human' class="li brightness organism" onclick='showDetails(this)' style="position:absolute;z-index:1; height: 10px; width: 10px;"></div>
+        <div id='spirala' class="imgbox" style="position:absolute;top: 0px;left: 0px;z-index: index 0; height: auto; width: auto;"></div>
             <img src="img/spirala.jpg" class="image">
         </div>
     </div>
@@ -33,6 +35,9 @@
     var spiralaElement = document.getElementById('spirala');
     var boxTargetE = document.getElementById('boxTarget');
     const style = (node, styles) => Object.keys(styles).forEach(key => node.style[key] = styles[key])
+    var flowerElement = document.getElementById('flower');
+    style(flowerElement, { top: '4800px' })
+    style(flowerElement, { left: '3000px' })
 
     var showDetails = function(element) {
         if (element.id == 'flower') {
@@ -46,28 +51,31 @@
     var zoomOutE = document.getElementById('zoomOutBtn');
     var zoomInitE = document.getElementById('zoomInitBtn');
     zoomE.addEventListener("click", function(){
+        alert(parseInt(boxTargetE.scrollHeight));
         zoom = zoom + 0.1;
         style(boxTargetE, {
             transform: 'scale(' + zoom + ')'
         })
-        boxTargetE.scrollTop = parseInt(boxTargetE.scrollTop)/100 + 10.00 + '%';
-        boxTargetE.scrollLeft = parseInt(boxTargetE.scrollLeft)/100 + 10.00 + '%';
+        // boxTargetE.scrollTop = parseInt(boxTargetE.scrollHeight)/100 + 10.00 + '%';
+        // boxTargetE.scrollLeft = parseInt(boxTargetE.scrollLeft)/100 + 10.00 + '%';
     });
     zoomInitE.addEventListener("click", function(){
+        alert(parseInt(boxTargetE.scrollHeight));
         zoom = 1;
         style(boxTargetE, {
             transform: 'scale(' + zoom + ')'
         })
-        boxTargetE.scrollTop = parseInt(boxTargetE.scrollTop)/100 + 10.00 + '%';
-        boxTargetE.scrollLeft = parseInt(boxTargetE.scrollLeft)/100 + 10.00 + '%';
+        // boxTargetE.scrollTop = parseInt(boxTargetE.scrollTop)/100 + 10.00 + '%';
+        // boxTargetE.scrollLeft = parseInt(boxTargetE.scrollLeft)/100 + 10.00 + '%';
     });
     zoomOutE.addEventListener("click", function(){
+        alert(parseInt(boxTargetE.scrollHeight));
         zoom = zoom - 0.1;
         style(boxTargetE, {
             transform: 'scale(' + zoom + ')'
         })
-        boxTargetE.scrollTop = parseInt(boxTargetE.scrollTop)/100 + 10.00 + '%';
-        boxTargetE.scrollLeft = parseInt(boxTargetE.scrollLeft)/100 + 10.00 + '%';
+        // boxTargetE.scrollTop = parseInt(boxTargetE.scrollTop)/100 + 10.00 + '%';
+        // boxTargetE.scrollLeft = parseInt(boxTargetE.scrollLeft)/100 + 10.00 + '%';
     });
 </script>
 
